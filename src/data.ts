@@ -13,6 +13,6 @@ export const navLink = [
   },
   {
     id: "contact",
-    name: "Contac tUs",
+    name: "Contact Us",
   },
 ];
