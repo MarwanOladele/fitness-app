@@ -21,7 +21,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
     <nav>
       {/* MOBILE MENU */}
       {!isAboveMediumScreen && isNavbarOpen && (
-        <div className="fixed right-0 top-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+        <div className="fixed right-0 top-0 z-40 h-full w-1/3 bg-primary-100 drop-shadow-xl animate-wiggle">
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsNavbarOpen(!isNavbarOpen)}>
