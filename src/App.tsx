@@ -12,7 +12,7 @@ const App = () => {
     <div className="app bg-gray-20">
       <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Home setSelectedPage={setSelectedPage} />
-      <Benefits />
+      <Benefits setSelectedPage={setSelectedPage}/>
     </div>
   );
 };
