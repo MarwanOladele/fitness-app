@@ -54,12 +54,8 @@ const Benefits = ({ setSelectedPage }: Props) => {
 
         {/* BENEFITS */}
         <div className="md:flex items-center justify-between gap-8 mt-5">
-          {benefits.map((benefit: BenefitType) => (
-            <Benefit
-              key={benefit.title}
-              {...benefit}
-              setSelectedPage={setSelectedPage}
-            />
+          {benefits.map((benefit: BenefitType, i) => (
+            <Benefit key={i} {...benefit} setSelectedPage={setSelectedPage} />
           ))}
         </div>
 

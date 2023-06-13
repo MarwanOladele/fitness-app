@@ -3,7 +3,7 @@ import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hook/mediaQuery";
 import { MdDensityMedium, MdOutlineClose } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ActionButton from "@/components/ActionButton";
 
 type Props = {
@@ -12,9 +12,27 @@ type Props = {
 };
 
 const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+  const [show, setShow] = useState(false);
+  console.log(show);
+  
+  const handleBlackBackground = () => {
+    if (window.scrollY > 70) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleBlackBackground);
+
+    return () => {
+      window.removeEventListener("scroll", handleBlackBackground);
+    };
+  }, []);
+
   const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
   const [isNavbarOpen, setIsNavbarOpen] = useState<boolean>(false);
-  console.log(isAboveMediumScreen);
 
   const flexBetween = "flex justify-between items-center";
   return (
@@ -54,7 +72,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
           </div>
         </div>
       )}
-      <div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
+      <div className={`${flexBetween} fixed top-0 z-30 w-full py-6 ${show && 'bg-primary-100'}`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             <img src={Logo} alt="logo" />
