@@ -16,7 +16,7 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   console.log(show);
   
   const handleBlackBackground = () => {
-    if (window.scrollY > 70) {
+    if (window.scrollY > 100) {
       setShow(true);
     } else {
       setShow(false);
