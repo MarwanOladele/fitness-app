@@ -1,13 +1,8 @@
-import { SelectedPage } from "@/shared/types";
 import { useForm } from "react-hook-form";
 import contactus from "../../assets/ContactUsPageGraphic.png";
 import HText from "@/components/HText";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const Contactus = ({ setSelectedPage }: Props) => {
+const Contactus = () => {
   const {
     register,
     trigger,
@@ -45,7 +40,7 @@ const Contactus = ({ setSelectedPage }: Props) => {
             >
               <input
                 type="text"
-                className="w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white mt-5 outline-none" 
+                className="w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white mt-5 outline-none"
                 placeholder="NAME"
                 {...register("name", {
                   required: true,
@@ -88,14 +83,19 @@ const Contactus = ({ setSelectedPage }: Props) => {
                   {errors.message.type === "maxLength" && "Max length is 1000"}
                 </p>
               )}
-              <button className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white" type="submit">SUBMIT</button>
+              <button
+                className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
+                type="submit"
+              >
+                SUBMIT
+              </button>
             </form>
           </div>
-           <div className="relative mt-16 basis-2/5 md:mt-0">
-                <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:right-10 before:z-[-1]">
-                  <img src={contactus} alt="contactus" className="w-full" />
-                </div>
-           </div>
+          <div className="relative mt-16 basis-2/5 md:mt-0">
+            <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:right-10 before:z-[-1]">
+              <img src={contactus} alt="contactus" className="w-full" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
