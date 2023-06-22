@@ -6,6 +6,7 @@ const Contactus = () => {
   const {
     register,
     trigger,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -86,6 +87,7 @@ const Contactus = () => {
               <button
                 className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
                 type="submit"
+                onClick={reset}
               >
                 SUBMIT
               </button>
